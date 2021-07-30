@@ -15,10 +15,10 @@ class ListController extends Controller
         return view('main',['items'=>$items]);
     }
     public function add(Request $request){
+        $this->validate($request, Person::$rules);
         Person::create([
             'list'=>$request->list
         ]);
-        $this->validate($request, Person::$rules);
         return redirect('/');
     }
     public function delete(Request $request){
@@ -27,9 +27,9 @@ class ListController extends Controller
     }
         
     public function update(Request $request){
+        $this->validate($request,Person::$rules);
              $form=$request->all();
              Person::find($request->id)->update( $form); 
-             $this->validate($request,Person::$rules);
             return redirect('/');
     }
   
