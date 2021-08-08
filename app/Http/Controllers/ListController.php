@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Person;
 use Illuminate\Http\Request;
+use App\Http\Requests\ClientRequest;
 
 use Illuminate\Support\Facades\DB;
 
@@ -14,8 +15,8 @@ class ListController extends Controller
         $items=Person::all();
         return view('main',['items'=>$items]);
     }
-    public function add(Request $request){
-        $this->validate($request, Person::$rules);
+    public function add(ClientRequest $request){
+        // $this->validate($request, Person::$rules);
         Person::create([
             'list'=>$request->list
         ]);
@@ -26,8 +27,8 @@ class ListController extends Controller
         return redirect('/');
     }
         
-    public function update(Request $request){
-        $this->validate($request,Person::$rules);
+    public function update(ClientRequest $request){
+        // $this->validate($request,Person::$rules);
              $form=$request->all();
              Person::find($request->id)->update( $form); 
             return redirect('/');

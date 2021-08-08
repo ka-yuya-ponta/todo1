@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    
   body {
     background-color: darkblue;
   }
@@ -73,6 +74,11 @@ td {
   padding:  0 10px;
 
 }
+.error {
+  color: white;
+  text-align: center;
+  list-style: none;
+}
 
 
 
@@ -99,7 +105,7 @@ td {
 @if (count($errors) > 0)
 <ul>
   @foreach ($errors->all() as $error)
-  <li>
+  <li class="error">
     {{$error}}
   </li>
   @endforeach
