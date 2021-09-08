@@ -17,10 +17,13 @@ class ListController extends Controller
     }
     public function add(ClientRequest $request){
       if($request->has('list')){
-          alert('登録完了');
+        $alert = "<script type='text/javascript'>alert('登録完了');</script>";
+        echo $alert;
         }
           else{
-              alert('リストが入力されていません');
+            $alert = "<script type='text/javascript'>alert('リストが入力されていません');</script>";
+            echo $alert;
+              
           }
           
         Person::create([
@@ -29,6 +32,8 @@ class ListController extends Controller
         return redirect('/');
     }
     public function delete(Request $request){
+        $alert = "<script type='text/javascript'>alert('よく頑張った');</script>";
+        echo $alert;
         Person::find($request->id)->delete();  
         return redirect('/');
     }
