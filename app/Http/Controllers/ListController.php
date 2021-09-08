@@ -16,7 +16,13 @@ class ListController extends Controller
         return view('main',['items'=>$items]);
     }
     public function add(ClientRequest $request){
-        // $this->validate($request, Person::$rules);
+      if($request->has('list')){
+          alert('登録完了');
+        }
+          else{
+              alert('リストが入力されていません');
+          }
+          
         Person::create([
             'list'=>$request->list
         ]);
@@ -28,7 +34,7 @@ class ListController extends Controller
     }
         
     public function update(ClientRequest $request){
-        // $this->validate($request,Person::$rules);
+        
              $form=$request->all();
              Person::find($request->id)->update( $form); 
             return redirect('/');

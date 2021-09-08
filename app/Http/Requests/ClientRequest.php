@@ -25,14 +25,14 @@ class ClientRequest extends FormRequest
     {
         return [
             //
-            'list'=>'required|max:10',
+            'list'=>'required',
         ];
         
     }
     public function messages()
     {
         return [
-            'list.required'=>'10文字以下で入力してください',
+            'list.required'=>'やることが入力されていません',
         ];
     }
 }
