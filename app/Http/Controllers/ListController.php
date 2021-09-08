@@ -15,7 +15,7 @@ class ListController extends Controller
         $items=Person::all();
         return view('main',['items'=>$items]);
     }
-    public function add(ClientRequest $request){
+    public function add(Request $request){
       if($request->has('list')){
         $alert = "<script type='text/javascript'>alert('登録完了');</script>";
         echo $alert;
