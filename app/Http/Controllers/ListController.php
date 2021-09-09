@@ -32,7 +32,10 @@ class ListController extends Controller
           Person::find($request->id)->update( $form); 
           return redirect('/');
   }
-  public function change(){
+  public function change(Request $request){
+    $form=$request->color;
+    Person::find($request->id)->update( $form); 
+    return redirect('/');
       
   }
 
