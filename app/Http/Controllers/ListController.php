@@ -32,6 +32,9 @@ class ListController extends Controller
           Person::find($request->id)->update( $form); 
           return redirect('/');
   }
+  public function change(){
+      
+  }
 
 }
 

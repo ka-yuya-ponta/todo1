@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends Model
 {
     use HasFactory;
-    protected $fillable = [ 'list'];
+    protected $fillable = [ 'list','color'];
 
     public static $rules = array(
         'list' => 'required|max:20',

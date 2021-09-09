@@ -32,7 +32,7 @@ class ClientRequest extends FormRequest
     public function messages()
     {
         return [
-            'list.required'=>'やることが入力されていません',
+            'list.required'=>'エラー：やることが入力されていません',
         ];
     }
 }

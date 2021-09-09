@@ -94,64 +94,34 @@
   }
 
   .error {
-
-    text-align: center;
+    color: red;
     list-style: none;
+    text-align: center;
   }
 
   .errors {
-    height: 100px;
     width: 300px;
+    height: 80px;
+    padding: 10px;
+    line-height: 80px;
+    border-radius: 10px;
     margin: 0 auto;
+    border: 10px solid gainsboro;
     background-color: white;
-  }
-
-  .openBtn {
-    display: block;
-    margin: 50px auto;
-  }
-
-  .modal {
-    display: none;
-    position: fixed;
-    left: 0%;
-    top: 0%;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .modal__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  .modal__content-inner {
-    background-color: white;
-    width: 500px;
-    text-align: center;
-    padding: 50px;
   }
   </style>
 </head>
 
 
-
-<body>
+<body style="background-color:{{$items->color}};">
   @if(count($errors) > 0)
-  <div id="modal" class="modal">
-    <div class="modal__content">
-      <div class="modal__content-inner">
-        <ul>
-          @foreach ($errors->all() as $error)
-          <li class="error">{{$error}}</li>
-          @endforeach
-        </ul>
-        <input type="button" id="closeBtn" value="閉じる">
-      </div>
-    </div>
+
+  <div class="errors">
+
+    @foreach ($errors->all() as $error)
+    <li class="error">{{$error}}</li>
+    @endforeach
+
   </div>
   @endif
 
@@ -160,7 +130,7 @@
   <table>
 
     <tr>
-      <th class="title">
+      <th class=" title">
         Todo List
       </th>
     </tr>
@@ -222,17 +192,6 @@
   }
   let select = document.querySelector('select');
   select.addEventListener('change', changeColor);
-  const closeBtn = document.getElementById('closeBtn');
-  const modal = document.getElementById('modal');
-
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  })
-  window.addEventListener('click', (e) => {
-    if (!e.target.closest('.modal__content-inner') && e.target.id !== "openBtn") {
-      modal.style.display = 'none';
-    }
-  });
   </script>
 
 
