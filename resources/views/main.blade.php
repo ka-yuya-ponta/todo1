@@ -113,7 +113,7 @@
 </head>
 
 
-<body style="background-color:{{$items->color}};">
+<body style="background-color:{{$color}};">
   @if(count($errors) > 0)
 
   <div class="errors">

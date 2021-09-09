@@ -13,7 +13,8 @@ class ListController extends Controller
   //
   public function index(Request $request){
       $items=Person::all();
-      return view('main',['items'=>$items]);
+      $color=Person::all()->color;
+      return view('main', ['items' => $items, 'color' => $color]);
   }
   public function add(ClientRequest $request){
 
