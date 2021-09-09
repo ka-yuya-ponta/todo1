@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Person;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientRequest;
+use App\Models\User;
 
 use Illuminate\Support\Facades\DB;
 
@@ -13,8 +14,7 @@ class ListController extends Controller
   //
   public function index(Request $request){
       $items=Person::all();
-      $color=Person::all()->color;
-      return view('main', ['items' => $items, 'color' => $color]);
+      return view('main', ['items' => $items]);
   }
   public function add(ClientRequest $request){
 
@@ -33,12 +33,8 @@ class ListController extends Controller
           Person::find($request->id)->update( $form); 
           return redirect('/');
   }
-  public function change(Request $request){
-    $form=$request->color;
-    Person::find($request->id)->update( $form); 
-    return redirect('/');
-      
-  }
+
+  
 
 }
 

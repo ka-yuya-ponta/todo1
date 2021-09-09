@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +15,8 @@ use App\Http\Controllers\ListController;
 */
 
 Route::get('/', [ListController::class,'index']);
+Route::get('/', [UserController::class,'index']);
 Route::post('/add',[ListController::class,'add']);
 Route::post('/update',[ListController::class,'update'])->name('list.update');
 Route::post('/delete',[ListController::class,'delete'])->name('list.delete');
-
-
-
+Route::post('/change',[UserController::class,'change'])->name('user.change');

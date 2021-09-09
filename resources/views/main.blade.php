@@ -113,7 +113,7 @@
 </head>
 
 
-<body style="background-color:{{$color}};">
+<body style="background-color:'{{$content->color}}'">
   @if(count($errors) > 0)
 
   <div class="errors">
@@ -179,11 +179,16 @@
   </table>
 
   </div>
-  <select name="" id="">
+  <select name="sampleName" form="sampleForm">
     <option value="darkblue">青</option>
     <option value="red">赤</option>
     <option value="green">緑</option>
   </select>
+  <p>
+    <button type="submit" form="sampleForm">送信</button>
+  </p>
+  <form action="{{ route('user.change', ['id' => $content->id]) }} " method=" post" target="_blank" id="sampleForm">
+  </form>
   <script>
   'use strict'
 
