@@ -9,9 +9,9 @@ class UserController extends Controller
     //
     public function index(){
         $content=User::where('id',1)->first();
-            if (empty($content->color)){
-                $content->color='darkblue';
-        }
+        //     if (empty($content->color)){
+        //         $content->color='darkblue';
+        // }
         return view('main'.['content'=>$content]);
     }
       public function change(Request $request){
