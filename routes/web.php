@@ -15,7 +15,6 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [ListController::class,'index']);
-Route::get('/', [UserController::class,'index']);
 Route::post('/add',[ListController::class,'add']);
 Route::post('/update',[ListController::class,'update'])->name('list.update');
 Route::post('/delete',[ListController::class,'delete'])->name('list.delete');

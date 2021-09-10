@@ -14,7 +14,8 @@ class ListController extends Controller
   //
   public function index(Request $request){
       $items=Person::all();
-      return view('main', ['items' => $items]);
+      $content=User::where('id',1)->first();
+      return view('main', ['items' => $items,'content'=>$content]);
   }
   public function add(ClientRequest $request){
 

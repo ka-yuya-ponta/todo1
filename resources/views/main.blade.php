@@ -87,7 +87,7 @@
     left: 0;
   }
 
-  select {
+  .submit {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -183,24 +183,27 @@
   </table>
 
   </div>
-  <select name="sampleName" form="sampleForm">
-    <option value="darkblue">青</option>
-    <option value="red">赤</option>
-    <option value="green">緑</option>
-  </select>
-  <p>
-    <button type="submit" form="sampleForm">送信</button>
-  </p>
-  <form action="{{ route('user.change', ['id' => $content->id]) }} " method=" post" target="_blank" id="sampleForm">
-  </form>
-  <script>
-  'use strict'
+  <div class="submit">
 
-  function changeColor(event) {
-    document.querySelector('body').style.backgroundColor = event.currentTarget.value;
-  }
-  let select = document.querySelector('select');
-  select.addEventListener('change', changeColor);
+    <select name="sampleName" form="sampleForm">
+      <option value="darkblue">青</option>
+      <option value="red">赤</option>
+      <option value="green">緑</option>
+    </select>
+    <p>
+      <button type="submit" form="sampleForm">送信</button>
+    </p>
+    <form action="{{ route('user.change', ['id' => $content->id]) }} " method=" post" target="_blank" id="sampleForm">
+    </form>
+  </div>
+  <script>
+  // 'use strict'
+
+  // function changeColor(event) {
+  //   document.querySelector('body').style.backgroundColor = event.currentTarget.value;
+  // }
+  // let select = document.querySelector('select');
+  // select.addEventListener('change', changeColor);
   </script>
 
 
