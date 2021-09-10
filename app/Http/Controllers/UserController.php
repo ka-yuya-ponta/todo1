@@ -13,8 +13,8 @@ class UserController extends Controller
             if (empty($content->color)){
                 $content->color='darkblue';
             }
-            return view('main'.['contents'=>$contents]);
         }
+        return view('main'.['contents'=>$contents]);
     }
       public function change(Request $request){
             $form=$request->color;
