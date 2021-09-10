@@ -193,7 +193,8 @@
     <p>
       <button type="submit" form="sampleForm">送信</button>
     </p>
-    <form action="{{ route('user.change', ['id' => $content->id]) }} " method=" post" target="_blank" id="sampleForm">
+    <form action="{{ route('user.change', ['id' => $content->id]) }} " method="post" target="_blank" id="sampleForm">
+      @csrf
     </form>
   </div>
   <script>
