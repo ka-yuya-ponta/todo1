@@ -16,7 +16,7 @@ class UserController extends Controller
     // }
       public function change(Request $request){
             $form=$request->color;
-            User::find($request->id)->update( $form); 
+            User::find($request->id)->update( ['color'=>$form]); 
             return redirect('/');
               
     }

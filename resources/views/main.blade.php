@@ -185,7 +185,7 @@
   </div>
   <div class="submit">
 
-    <select name="sampleName" form="sampleForm">
+    <select name="clor" form="sampleForm">
       <option value="darkblue">青</option>
       <option value="red">赤</option>
       <option value="green">緑</option>
