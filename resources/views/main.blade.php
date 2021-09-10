@@ -192,15 +192,7 @@
       @csrf
     </form>
   </div>
-  <script>
-  // 'use strict'
 
-  // function changeColor(event) {
-  //   document.querySelector('body').style.backgroundColor = event.currentTarget.value;
-  // }
-  // let select = document.querySelector('select');
-  // select.addEventListener('change', changeColor);
-  </script>
 
 
 </body>
