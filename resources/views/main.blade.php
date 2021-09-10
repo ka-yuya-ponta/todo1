@@ -113,7 +113,11 @@
 </head>
 
 
+
+@foreach ($contents->all() as $content)
+
 <body style="background-color:'{{$content->color}}'">
+  @endforeach
   @if(count($errors) > 0)
 
   <div class="errors">
