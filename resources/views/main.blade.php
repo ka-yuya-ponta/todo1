@@ -10,11 +10,6 @@
   </script>
   <title>Document</title>
   <style>
-  body {
-    background-color: darkblue;
-  }
-
-
   table {
     background-color: white;
     width: 60%;
@@ -116,7 +111,7 @@
 
 
 
-<body style="background-color:'{{$content->color}}'">
+<body style="background-color:{{$content->color}}">
 
   @if(count($errors) > 0)
 
