@@ -8,13 +8,11 @@ class UserController extends Controller
 {
     //
     public function index(){
-        $contents=User::all();
-        foreach($contents as $content){  
+        $content=User::where('id',1)->first();
             if (empty($content->color)){
                 $content->color='darkblue';
-            }
         }
-        return view('main'.['contents'=>$contents]);
+        return view('main'.['content'=>$content]);
     }
       public function change(Request $request){
             $form=$request->color;
