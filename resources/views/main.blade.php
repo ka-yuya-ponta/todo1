@@ -188,7 +188,7 @@
     <p>
       <button type="submit" form="sampleForm">色の変更</button>
     </p>
-    <form action="{{ route('user.change', ['id' => $content->id]) }} " method="post" target="_blank" id="sampleForm">
+    <form action="{{ route('user.change', ['id' => $content->id]) }} " method="post" id="sampleForm">
       @csrf
     </form>
   </div>
