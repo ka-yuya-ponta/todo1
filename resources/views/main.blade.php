@@ -186,7 +186,7 @@
       <option value="green">緑</option>
     </select>
     <p>
-      <button type="submit" form="sampleForm">送信</button>
+      <button type="submit" form="sampleForm">色の変更</button>
     </p>
     <form action="{{ route('user.change', ['id' => $content->id]) }} " method="post" target="_blank" id="sampleForm">
       @csrf
