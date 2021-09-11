@@ -27,7 +27,7 @@ class HelloTest extends TestCase
         // $this->assertLessThan(100, $n);
 
         // アクセスのテスト
-        $this->get('/')->assertStatus(200);
+        $this->get('/')->assertStatus(302);
         $this->get('/')->assertOk();
         $this->post('/add')->assertOk();
         $this->post('/delete')->assertOk();

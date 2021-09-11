@@ -14,7 +14,7 @@ class ExampleTest extends TestCase
      */
     public function test_example()
     {
-       $this->get('/')->assertStatus(200);
+       $this->get('/')->assertStatus(302);
        $this->get('/')->assertOk();
        $this->post('/add')->assertOk();
        $this->post('/delete')->assertOk();
