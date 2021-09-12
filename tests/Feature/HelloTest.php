@@ -29,9 +29,9 @@ class HelloTest extends TestCase
         // アクセスのテスト
         $this->get('/')->assertStatus(302);
         $this->get('/')->assertOk();
-        $this->post('/add')->assertOk();
-        $this->post('/delete')->assertOk();
-        $this->post('/update')->assertOk();
+        $this->post('/add',['list'=>'test'])->assertOk();
+        $this->post('/delete',['id'=>1])->assertOk();
+        $this->post('/update',['list'=>'good','id'=>2])->assertOk();
         $this->get('/aa')->assertStatus(404);
         // データベースのテスト
         Person::factory()->create([
